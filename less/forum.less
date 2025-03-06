@@ -1,219 +1,194 @@
-/* Hub */
+/* Tema Optimizado */
 @import "common.less";
+
 li {
-    border-radius: @border-radius !important;
+    border-radius: @border-radius;
 }
+
 .FlarumBlogOverview .BlogFeatured-list-item,
 .FlarumBlogOverview .BlogFeatured-list-item-top .dataItem,
 .FlarumBlog-Article-Content,
 .FlarumBlog-Article-Comments,
 .BlogSideWidget-item,
-.FlarumBlog-Article-Author {
-    border-radius: @border-radius !important;
-    box-shadow: unset !important;
-}
-.BlogSideWidget {
-    border-radius: @border-radius !important;
-    box-shadow: unset !important;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 8px;
-}
+.FlarumBlog-Article-Author,
+.BlogSideWidget,
 .FlarumBlog-Article-Author-background,
 .FlarumBlogItem .FlarumBlog-Article .FlarumBlog-Article-Container .FlarumBlog-Article-Image {
-    border-radius: @border-radius @border-radius 0 0 !important;
-    box-shadow: unset !important;
+    border-radius: @border-radius;
+    box-shadow: unset;
 }
+
 .WelcomeHero {
     color: #fdfdfd;
     background: linear-gradient(160deg, var(--control-bg-shaded), var(--button-primary-bg-hover));
 }
-body, #app .App-content {
+
+body, #app .App-content,
+#drawer, #app-navigation, #header when (@config-colored-header = false) {
     background-color: var(--control-bg-light);
 }
-#drawer, #app-navigation, #header {
-    & when (@config-colored-header = false){
-        background-color: var(--control-bg-light);
-    }
-}
+
 .AfruxWidgets-Widget-content {
     border-radius: @border-radius;
 }
-.item-like .Button--link .Button-label,.item-dislike .Button--link .Button-label,.item-reply .Button--link .Button-label {
-	display:none;
+
+.item-like .Button--link .Button-label,
+.item-dislike .Button--link .Button-label,
+.item-reply .Button--link .Button-label {
+    display: none;
 }
-.item-like .Button:before {
-	font-family: 'Font Awesome 5 Free', 'Font Awesome 6 Free', 'Font Awesome 6 Pro';
-	font-weight: 600;
-	font-size: 14px;
-	content: '\f164';
-	vertical-align: -1px;
-}
-.item-dislike .Button:before {
-	font-family: 'Font Awesome 5 Free', 'Font Awesome 6 Free', 'Font Awesome 6 Pro';
-	font-weight: 600;
-	font-size: 14px;
-	content: '\f165';
-	vertical-align: -3px;
-}
+
+.item-like .Button:before,
+.item-dislike .Button:before,
 .item-reply .Button--link:before {
-	font-family: 'Font Awesome 5 Free', 'Font Awesome 6 Free', 'Font Awesome 6 Pro';
-	font-weight: 600;
-	font-size: 15px;
-	content: '\f3e5';
-	margin-right: 4px;
-	vertical-align: -2px;
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 6 Free', 'Font Awesome 6 Pro';
+    font-weight: 600;
+    font-size: 14px;
 }
-.PostStream {
+
+.item-like .Button:before {
+    content: '\f164';
+    vertical-align: -1px;
+}
+
+.item-dislike .Button:before {
+    content: '\f165';
+    vertical-align: -3px;
+}
+
+.item-reply .Button--link:before {
+    content: '\f3e5';
+    margin-right: 4px;
+    vertical-align: -2px;
+}
+
+.PostStream, .PostsUserPage, .DiscussionListItem, .DiscussionListItem-content {
     border-radius: @border-radius;
     margin-top: 4px;
-    padding: 4px 22px 4px 22px;
-    & when (@config-dark-mode = false) {
-        background-color: rgba(255,255,255,1.0);
-    }
-    & when (@config-dark-mode = true) {
-        background-color: rgba(14,14,14,1.0);
-    }
+    padding: 4px 22px;
+    background-color: rgba(255,255,255,1.0) when (@config-dark-mode = false);
+    background-color: rgba(14,14,14,1.0) when (@config-dark-mode = true);
 }
-.PostsUserPage {
-    border-radius: @border-radius;
-    margin-top: 4px;
-    padding: 12px 22px 12px 22px;
-    & when (@config-dark-mode = false) {
-        background-color: rgba(255,255,255,1.0);
-    }
-    & when (@config-dark-mode = true) {
-        background-color: rgba(14,14,14,1.0);
-    }
-}
-.DiscussionListItem {
-    margin: 8px 0px 8px 0px;
-    border-radius: @border-radius !important;
-    & when (@config-dark-mode = false) {
-        background-color: rgba(255,255,255,1.0);
-    }
-    & when (@config-dark-mode = true) {
-        background-color: rgba(14,14,14,1.0);
-    }
-}
-.DiscussionListItem-content {
-    border-radius: @border-radius !important;
-}
+
 .DiscussionList-loadMore {
     margin-top: 4px;
-    @media @phone {
-        margin: 4px 8px;
-    }
-    .Button {
-        width: 100%;
-        height: 100%;
-    }
 }
-aside.DiscussionPage-list {
-    padding: 4px;
+
+.DiscussionList-loadMore .Button {
+    width: 100%;
+    height: 100%;
 }
+
+aside.DiscussionPage-list,
 .Slidable-content {
+    padding: 4px;
     margin-top: 4px;
 }
+
 @media @phone {
     .DiscussionListItem {
         margin: 8px;
     }
 }
+
 @media @tablet-up {
     li.item-nav {
-        padding: 2px 12px 2px 12px;
+        padding: 2px 12px;
         border-radius: @border-radius;
-        & when (@config-dark-mode = false) {
-            background-color: rgba(255,255,255,1.0);
-        }
-        & when (@config-dark-mode = true) {
-            background-color: rgba(14,14,14,1.0);
-        }
+        background-color: rgba(255,255,255,1.0) when (@config-dark-mode = false);
+        background-color: rgba(14,14,14,1.0) when (@config-dark-mode = true);
     }
+
     .SettingsPage, .UserSecurityPage, .MasqueradeRoot {
         border-radius: @border-radius;
         margin-top: 4px;
-        padding: 12px 22px 12px 22px;
-        & when (@config-dark-mode = false) {
-            background-color: rgba(255,255,255,1.0);
-        }
-        & when (@config-dark-mode = true) {
-            background-color: rgba(14,14,14,1.0);
-        } 
+        padding: 12px 22px;
+        background-color: rgba(255,255,255,1.0) when (@config-dark-mode = false);
+        background-color: rgba(14,14,14,1.0) when (@config-dark-mode = true);
     }
 }
+
 .Badge {
     opacity: 0.9;
     color: #fff;
 }
+
 .Hero-close {
     display: none;
 }
-header.Hero.DiscussionHero, header.Hero.WelcomeHero {
+
+header.Hero.DiscussionHero, header.Hero.WelcomeHero,
+.darkenBackground, .Hero {
     border-radius: @border-radius;
 }
-.darkenBackground,.Hero {
-    border-radius: @border-radius;
-}
+
 .Hero {
     margin: 15px auto 0;
     max-width: @screen-desktop-hd;
-    @media @desktop {
+}
+
+@media @desktop {
+    .Hero {
         max-width: @screen-desktop;
     }
-    @media @tablet {
+}
+
+@media @tablet {
+    .Hero {
         max-width: @screen-tablet;
     }
-    @media @phone {
+}
+
+@media @phone {
+    .Hero {
         max-width: 100%;
-        padding: 0 15px; /* En lugar de restar 30px al ancho, usamos padding */
+        padding: 0 15px;
         margin-bottom: 15px;
     }
 }
-ul.NotificationGroup-content {
-    &>li {
-        margin: 4px 8px;
-        &>a {
-            &.Notification {
-                border-radius: @border-radius;
-            }
-            &.unread .Notification-title:after {
-                content: '';
-                display: inline-block;
-                width: 1em;
-                height: 1em;
-                border-radius: 50%;
-                background-color: var(--primary-color);
-                transform: translateY(10%);
-                margin-left: 8px;
-            }
-        }
-    }
+
+ul.NotificationGroup-content > li {
+    margin: 4px 8px;
 }
-.Composer {
-    border-radius: 12px 12px 0 0;
+
+ul.NotificationGroup-content > li > a.Notification {
+    border-radius: @border-radius;
 }
-.ComposerBody-loading {
+
+ul.NotificationGroup-content > li > a.unread .Notification-title:after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transform: translateY(10%);
+    margin-left: 8px;
+}
+
+.Composer, .ComposerBody-loading {
     border-radius: 12px;
 }
-@media (min-width:992px){
-    .TagTiles>li{
+
+@media (min-width:992px) {
+    .TagTiles > li {
         width: 30% !important;
-        border-radius: @border-radius !important;
+        border-radius: @border-radius;
         margin: 15px;
     }
 }
-@media (max-width:991px) and (min-width:768px){
-    .TagTiles>li{
+
+@media (max-width:991px) and (min-width:768px) {
+    .TagTiles > li {
         width: 45% !important;
-        border-radius: @border-radius !important;
+        border-radius: @border-radius;
         margin: 15px;
     }
 }
-@media (max-width: 767px){
-    .TagTiles>li{
-        border-radius: @border-radius !important;
+
+@media (max-width: 767px) {
+    .TagTiles > li {
+        border-radius: @border-radius;
         margin: 15px;
     }
 }
