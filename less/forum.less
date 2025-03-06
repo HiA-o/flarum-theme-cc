@@ -166,7 +166,8 @@ header.Hero.DiscussionHero, header.Hero.WelcomeHero {
         max-width: @screen-tablet;
     }
     @media @phone {
-        max-width: calc(~"100% - 30px");
+        max-width: 100%;
+        padding: 0 15px; /* En lugar de restar 30px al ancho, usamos padding */
         margin-bottom: 15px;
     }
 }
